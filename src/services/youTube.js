@@ -1,7 +1,7 @@
 angular.module('video-player')
 .service('youTube', function($http) {
   
-  this.getVideos = function(queue, callback) {
+  this.search = function(queue, callback) {
     $http({
       method: 'GET',
       url: 'https://www.googleapis.com/youtube/v3/search',
@@ -14,10 +14,8 @@ angular.module('video-player')
         part: 'snippet',
       }
     }).then(function successCallback(response) {
-      // callback(response.data.items);
-      this.videos = response.data.items;
-      this.currentVideo = response.data.items[0];
-    }.bind(callback), function errorCallback(response) {
+      callback(response.data.items);
+    }, function errorCallback(response) {
       console.log('YOU ARE A FAILURE');
       console.log(response);
     });

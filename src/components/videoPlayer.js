@@ -6,10 +6,6 @@ angular.module('video-player')
     buildURL: '<',
     updatePlayer: '<',  
   },
-  
-  controller: function() {
-    
-  },
 
   templateUrl: 'src/templates/videoPlayer.html'
 });

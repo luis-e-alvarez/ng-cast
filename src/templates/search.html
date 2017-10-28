@@ -1,8 +1,6 @@
 <div class="search-bar form-inline">
-<form ng-submit='submitFun()'>
-  <input class="form-control" type="text" ng-model='inputValue' ng-keyup='$event.keyCode===13 && submitFunc()'/>
-  <button class="btn" ng-click="$ctrl.search(inputValue)">
+  <input class="form-control" type="text" ng-change='$ctrl.result(inputValue)' ng-model='inputValue' ng-keyup='$event.keyCode===13 && submitFunc()'/>
+ <button class="btn" ng-click="$ctrl.result(inputValue)">
     <span class="glyphicon glyphicon-search"></span>
   </button>
-</form>
 </div>
